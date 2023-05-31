@@ -9,13 +9,14 @@ function getTotal($arr) {
     foreach ($arr as $value) 
     {
         $total += $value;
+        
 
     }
-    round($total, 2);
-
+    
+    $roundedTotal = round($total, 2);
     //TODO do adding here
     //TODO do rounding stuff here
-    echo "The total is " . var_export($total, true);
+    echo "The total is " . number_format(round($roundedTotal, 2)) . "<br>";
 }
 echo "Problem 2: Adding Floats<br>";
 ?>

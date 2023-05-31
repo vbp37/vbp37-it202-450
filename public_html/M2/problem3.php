@@ -5,6 +5,22 @@ $a3 = [-0.01, -0.0001, -.15];
 $a4 = ["-1", "2", "-3", "4", "-5", "5", "-6", "6", "-7", "7"];
 
 function bePositive($arr) {
+
+    foreach($arr as $value)
+    {
+        if ($value < 0)
+        {
+            $value = abs($value);
+            echo $value . "<br>";
+
+        }
+
+        elseif($value.is_string($value))
+        {
+            $value = abs((int)$value);
+        }
+        echo $value . "<br>";
+    }
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     echo "<br>Positive output:<br>";
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
