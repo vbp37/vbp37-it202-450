@@ -13,10 +13,10 @@ function getTotal($arr) {
 
     }
     
-    $roundedTotal = number_format($total, 2);
+    $roundedTotal = round($total, 2);
     //TODO do adding here
     //TODO do rounding stuff here
-    echo "The total is " . number_format($roundedTotal,2) . "<br>";
+    echo "The total is " . round($roundedTotal,2) . "<br>";
 }
 echo "Problem 2: Adding Floats<br>";
 ?>
