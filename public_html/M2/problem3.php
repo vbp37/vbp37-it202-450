@@ -14,7 +14,7 @@ function bePositive($arr) {
     {
         if ($value.is_numeric($value))
         {
-            $value = abs($value) ;
+            $NewValue = abs($value) ;
             
 
         }
@@ -24,6 +24,7 @@ function bePositive($arr) {
       //      $value = abs((int)$value);
       //  }
        //  echo var_dump($value) . "<br>";
+       echo $NewValue . "<br>";
        echo var_dump($value) . "<br>";
     }
 
