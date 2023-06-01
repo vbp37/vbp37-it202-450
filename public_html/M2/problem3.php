@@ -5,6 +5,10 @@ $a3 = [-0.01, -0.0001, -.15];
 $a4 = ["-1", "2", "-3", "4", "-5", "5", "-6", "6", "-7", "7"];
 
 function bePositive($arr) {
+    echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
+    
+    echo "<br>Positive output:<br>";
+    
 
     foreach($arr as $value)
     {
@@ -19,12 +23,10 @@ function bePositive($arr) {
       //  {
       //      $value = abs((int)$value);
       //  }
-        echo var_dump($value) . "<br>";
+       //  echo var_dump($value) . "<br>";
+   // echo var_dump($arr) . "<br>";
     }
-    //echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
-    echo "<br>Processing Array:<br><pre>" . var_dump($arr, true) . "</pre>";
-    echo "<br>Positive output:<br>";
-   // echo var_dump($arr);
+
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
 }
