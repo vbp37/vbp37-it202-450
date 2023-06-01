@@ -16,7 +16,7 @@ function getTotal($arr) {
     $roundedTotal = round($total, 2);
     //TODO do adding here
     //TODO do rounding stuff here
-    echo "The total is " . $roundedTotal, 2 . "<br>";
+    echo "The total is " . $roundedTotal . "<br>";
 }
 echo "Problem 2: Adding Floats<br>";
 ?>
