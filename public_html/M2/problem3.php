@@ -8,21 +8,22 @@ function bePositive($arr) {
 
     foreach($arr as $value)
     {
-        if ($value < 0)
+        if ($value < 0 && $value.is_numeric($value))
         {
-            $value = abs($value);
-            echo $value . "<br>";
+            $value = abs($value) ;
+            
 
         }
 
-        elseif($value.is_string($value))
-        {
-            $value = abs((int)$value);
-        }
-        echo $value . "<br>";
+      //  elseif($value.is_string($value))
+      //  {
+      //      $value = abs((int)$value);
+      //  }
+        echo var_dump($value) . "<br>";
     }
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     echo "<br>Positive output:<br>";
+    var_dump($arr);
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
 }
