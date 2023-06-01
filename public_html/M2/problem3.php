@@ -22,7 +22,7 @@ function bePositive($arr) {
 
         elseif($value.is_string($value))
         {
-            $NewValue = (string)$value;
+            $NewValue = strval($value);
         }
 
       //  elseif($value.is_string($value))
