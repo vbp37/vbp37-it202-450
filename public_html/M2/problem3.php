@@ -8,7 +8,7 @@ function bePositive($arr) {
 
     foreach($arr as $value)
     {
-        if ($value < 0 && $value.is_numeric($value))
+        if ($value.is_numeric($value))
         {
             $value = abs($value) ;
             
