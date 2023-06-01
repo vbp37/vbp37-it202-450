@@ -24,7 +24,7 @@ function bePositive($arr) {
       //      $value = abs((int)$value);
       //  }
        //  echo var_dump($value) . "<br>";
-   // echo var_dump($arr) . "<br>";
+       echo var_dump($value) . "<br>";
     }
 
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
