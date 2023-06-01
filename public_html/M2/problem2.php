@@ -13,7 +13,7 @@ function getTotal($arr) {
 
     }
     
-    $roundedTotal = round($total, 2);
+    $roundedTotal = number_format($total, 2);
     //TODO do adding here
     //TODO do rounding stuff here
     echo "The total is " . $roundedTotal . "<br>";
