@@ -16,14 +16,20 @@ function bePositive($arr) {
         if ($value.is_numeric($value))
         {
             $NewValue = abs($value) ;
+
+            if($value.is_string($value))
+            {
+                $NewValue = strval($value);
+
+            }
             
 
         }
 
-        elseif($value.is_string($value))
+       /* elseif($value.is_string($value))
         {
             $NewValue = strval($value);
-        }
+        } */
 
       //  elseif($value.is_string($value))
       //  {
