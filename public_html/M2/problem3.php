@@ -31,7 +31,7 @@ function bePositive($arr) {
       //  }
        //  echo var_dump($value) . "<br>";
        echo $NewValue . " " ;
-       echo var_dump($value) . "<br>";
+       echo var_dump($NewValue) . "<br>";
     }
 
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
