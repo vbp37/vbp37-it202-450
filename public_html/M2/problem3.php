@@ -36,7 +36,7 @@ function bePositive($arr) {
       //      $value = abs((int)$value);
       //  }
        //  echo var_dump($value) . "<br>";
-       echo $NewValue . " " ;
+     //  echo $NewValue . " " ;
        echo var_dump($value) . "<br>";
     }
 

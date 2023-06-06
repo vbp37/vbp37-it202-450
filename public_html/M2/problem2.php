@@ -14,6 +14,11 @@ function getTotal($arr) {
     }
     
     $roundedTotal = number_format($total, 2);
+    //UCID: Vbp37   IT202-450  Date:06/04/23
+    /*Attempting to add array values and get total to 2 decimal places
+    using a for each loop; we loop through each array, and the array values get added to total which 
+    is initally set to 0.00. Then we use number_format to round the total to 2 decimal places. we do it again when we
+    echp the total to the screen since 0.99 is rounded to 0.1 instead of 0.10. */
     //TODO do adding here
     //TODO do rounding stuff here
     echo "The total is " . number_format($roundedTotal,2) . "<br>";
