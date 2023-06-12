@@ -11,9 +11,10 @@
         });
         function getCurrentSelection() {
             setTimeout(() => {
+                
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-
+                const getCurrentSelection = updateCurrentPage(currentSelection);
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
@@ -30,7 +31,8 @@
          {
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0d/Nanga_parbat%2C_Pakistan_by_gul791.jpg');
          }
-        nav ul a:hover
+        nav ul a:hover,
+        nav ul a.selected
         {
             color: orangered
         }
@@ -81,10 +83,10 @@
         
         
             
-            <li><a href="#login">login</a></li>
-            <li><a href="#register">register</a></li>
-            <li><a href="#profile">profile</a></li>
-            <li><a href="#logout">logout</a></li>
+            <li><a href="#login" onclick = "updateCurrentPage(this.innerText)">login</a></li>
+            <li><a href="#register" onclick = "updateCurrentPage(this.innerText)">register</a></li>
+            <li><a href="#profile" onclick = "updateCurrentPage(this.innerText)">profile</a></li>
+            <li><a href="#logout" onclick = "updateCurrentPage(this.innerText)">logout</a></li>
         
         </ul>
     </nav>
