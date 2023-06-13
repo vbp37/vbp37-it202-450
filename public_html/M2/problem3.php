@@ -10,7 +10,6 @@ function bePositive($arr) {
     
     echo "<br>Positive output:<br>";
     
-
     foreach($arr as $value)
     {
         if ($value.is_numeric($value))
@@ -25,8 +24,7 @@ function bePositive($arr) {
             
 
         }
-
-       /* elseif($value.is_string($value))
+    /* elseif($value.is_string($value))
         {
             $NewValue = strval($value);
         } */
@@ -39,7 +37,7 @@ function bePositive($arr) {
      //  echo $NewValue . " " ;
        echo var_dump($value) . "<br>";
     }
-
+// UCID: vbp37  IT202-450  Date:06/04/23
     //TODO use echo to output all of the values as positive (even if they were originally positive) 
     //hint: may want to use var_dump() to show final data types
 }
