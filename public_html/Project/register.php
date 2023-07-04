@@ -1,0 +1,83 @@
+<?php
+require_once(__DIR__ . "/../../lib/functions.php");  // you can do require or require_once
+?>
+<form onsubmit="return validate(this)" method="POST">
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" required />
+    </div>
+    <div>
+        <label for="pw">Password</label>
+        <input type="password" id="pw" name="password" required minlength="8" />
+    </div>
+    <div>
+        <label for="confirm">Confirm</label>
+        <input type="password" name="confirm" required minlength="8" />
+    </div>
+    <input type="submit" value="Register" />
+</form>
+<script>
+    function validate(form) {
+        //TODO 1: implement JavaScript validation
+        //ensure it returns false for an error and true for success
+
+        return true;
+    }
+</script>
+<?php
+ //TODO 2: add PHP Code
+ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])) 
+ {
+    $email = se($_POST, "email", "", false);
+    $password = se($_POST, "password", "", false);
+    $confirm = se($_POST, "confirm", "", false);
+    //todo 3 validate user
+    $hasError = false;
+    
+    if (empty($email)) 
+    {
+        echo "Email must be provided <br>";
+        $hasError = true;
+    }
+
+    //sanitize
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    //validate
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+    {
+        echo "Please enter a valid email <br> ";
+        $hasError = true;
+    }
+
+
+    if (empty($password)) {
+        echo "password must not be empty <br>";
+        $hasError = true;
+    }
+
+    if (empty($confirm)) {
+        echo "Confirm password must not be empty <br>";
+        $hasError = true;
+    }
+
+    if (strlen($password) < 8)
+    {
+        echo "Password must be atleast 8 characters long <br>";
+        $hasError = true;
+    }
+
+    if (strlen($password) > 0 && $password !== $confirm ) 
+    {
+        echo "Passwords must match <br>";
+        $hasError = true;
+    }
+
+    if (!$hasError)
+     {
+        echo " Welcome , $email"; // single quote is a literal string double quote allows us to put variable inside
+
+     }
+
+}
+ 
+?>
