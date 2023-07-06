@@ -7,6 +7,10 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
         <input type="email" name="email" required />
     </div>
     <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" required maxlength="30" />
+    </div>
+    <div>
         <label for="pw">Password</label>
         <input type="password" id="pw" name="password" required minlength="8" />
     </div>
@@ -26,11 +30,12 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
 </script>
 <?php
  //TODO 2: add PHP Code
- if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"])) 
+ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"]) && isset($_POST["username"]))
  {
     $email = se($_POST, "email", "", false);
     $password = se($_POST, "password", "", false);
     $confirm = se($_POST, "confirm", "", false);
+    $username = se($_POST, "username", "", false);
     //todo 3 validate user
     $hasError = false;
     
@@ -52,6 +57,12 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
     if (!is_valid_email($email))
     {
         flash("Please enter a valid email <br> ");
+        $hasError = true;
+    }
+
+    if (!preg_match('/^[a-z0-9_-]{3,30}$/', $username))
+    {
+        flash("Username must only contain 3-16 characters lowercase a-z, 0-9, _, or - <br> ");
         $hasError = true;
     }
 
@@ -83,9 +94,9 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
         //flash(" Welcome , $email";  single quote is a literal string double quote allows us to put variable insid")
         $hash = password_hash($password, PASSWORD_BCRYPT);
         $db = getDB();
-        $stmt = $db->prepare("INSERT INTO Users (email, password) VALUES(:email, :password)");
+        $stmt = $db->prepare("INSERT INTO Users (email, password, username) VALUES(:email, :password, :username)");
         try {
-            $r = $stmt->execute([":email" => $email, ":password" => $hash]);
+            $r = $stmt->execute([":email" => $email, ":password" => $hash, ":username" => $username]);
             flash("Welcome", $email);
         } catch (Exception $e) {
             flash("There was an error registering");
