@@ -9,11 +9,10 @@ require(__DIR__."/../../partials/nav.php");
 else{
   flash("You're not logged in");
 } */
-if (is_logged_in()){
+if (is_logged_in(true)){
        // flash("Welcome, " . get_user_email(");
+       error_log("Session data: " . var_export($_SESSION,true));
 }
-    else{
-        flash("You are not logged in");
-    }
+   
 ?>
 <?php require_once(__DIR__ . "/../../partials/flash.php");
