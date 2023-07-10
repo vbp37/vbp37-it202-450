@@ -1,10 +1,10 @@
 
 .alert-success {
-    background-color: green
+    background-color: white
 }
 
 .alert-warning {
-    background-color: yellow;
+    background-color: orangered;
 }
 
 .alert-danger {
@@ -12,13 +12,13 @@
 }
 
 .alert-info {
-    background-color: teal;
+    background-color: white;
 }
-nav li{display: inline; background-color: rebeccapurple;}
-nav li a{color: hotpink}
-input{border-radius: 50%;}
+nav li{display: inline; background-color: black;}
+nav li a{color: white}
+input{border-radius: 10%;}
 body{
-    background-color: hotpink;
-    color: rgb(153, 0, 153);
+    background-color: grey;
+    color: rgb(0, 0, 0);
 
 }
