@@ -110,7 +110,7 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
                         flash("Invalid password");
                     }
                 } else {
-                    flash("Email not found");
+                    flash("Email or username not found");
                 }
             }
         } catch (Exception $e) {
