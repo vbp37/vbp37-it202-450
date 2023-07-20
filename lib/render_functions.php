@@ -12,5 +12,5 @@ function render_button($data = array())
 
 function render_table($data = array())
 {
-    include(__DIR__ . "/../partials/table.php");
+    include(__DIR__ . "/../partials/tables.php");
 }
