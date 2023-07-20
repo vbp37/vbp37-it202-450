@@ -1,5 +1,6 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
+require_once(__DIR__ . "/../../lib/render_functions.php");
 reset_session();
 ?>
 <div class="container-fluid">
@@ -15,6 +16,40 @@ reset_session();
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
+         // Get form inputs
+    var emailInput = form.elements.email;
+    var usernameInput = form.elements.username;
+    var passwordInput = form.elements.password;
+    var confirmInput = form.elements.confirm;
+
+    // Perform validation
+
+    // Validate email
+    if (emailInput.value.trim() === "") {
+        alert("Email must not be empty");
+        return false;
+    }
+
+    // Validate username
+    if (usernameInput.value.trim() === "") {
+        alert("Username must not be empty");
+        return false;
+    }
+
+    // Validate password
+    if (passwordInput.value.trim() === "") {
+        alert("Password must not be empty");
+        return false;
+    }
+
+    // Validate confirm password
+    if (confirmInput.value.trim() === "") {
+        alert("Confirm Password must not be empty");
+        return false;
+    } else if (confirmInput.value !== passwordInput.value) {
+        alert("Passwords do not match");
+        return false;
+    }
 
         return true;
     }
@@ -77,4 +112,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
 ?>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
+
+
+
 ?> ```
