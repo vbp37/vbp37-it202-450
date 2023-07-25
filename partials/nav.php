@@ -52,4 +52,4 @@ session_start();
             <li><a href="<?php echo get_url('logout.php'); ?>">Logout</a></li>
         <?php endif; ?>
     </ul>
-</nav> ```
+</nav> 
