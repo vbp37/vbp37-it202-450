@@ -5,10 +5,18 @@ require(__DIR__ . "/../../partials/nav.php");
 
 $jokeData = get("https://dad-jokes.p.rapidapi.com/random/joke", "DADJOKE_API_KEY", [], true, "dad-jokes.p.rapidapi.com");
 
-error_log("Response: " . var_export($jokeData, true));
+/*error_log("Response: " . var_export($jokeData, true));
 if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData["response"])) {
     $response = json_decode($jokeData["response"], true);
     $joke = $response["body"][0];
+} else {
+    $joke = null;
+}
+?> */
+error_log("Response: " . var_export($jokeData, true));
+if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData["response"])) {
+    $response = json_decode($jokeData["response"], true);
+    $joke = $response;
 } else {
     $joke = null;
 }
