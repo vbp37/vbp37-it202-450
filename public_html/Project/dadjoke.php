@@ -7,36 +7,22 @@ $jokeData = get("https://dad-jokes.p.rapidapi.com/random/joke", "DADJOKE_API_KEY
 
 error_log("Response: " . var_export($jokeData, true));
 if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData["response"])) {
-
-/*if (isset($result, "status", 400, false) == 200 && isset($result["response"])) { 
-    $result = json_decode($result["response"], true);
-} else {
-    $result = [];
-}
-?>         Old Code */  
-
-/*$jokeData = json_decode($jokeData["response"], true);
-    $joke = $jokeData["body"][0]["joke"];
-} else {
-    $joke = "No joke available at the moment. Please try again later.";
-}
-?> */
-$response = json_decode($jokeData["response"], true);
-    $joke = $response["body"][0]; // Accessing the first element of the "body" array
+    $response = json_decode($jokeData["response"], true);
+    $joke = $response["body"][0];
 } else {
     $joke = null;
 }
 ?>
 
 <div class="container">
-    <h1>Dad Joke Generator</h1>
+    <h1>Random Joke - Demo</h1>
     <?php if ($joke) : ?>
         <div class="joke">
             <h2><?php echo $joke["setup"]; ?></h2>
             <p><?php echo $joke["punchline"]; ?></p>
         </div>
     <?php else : ?>
-        <p>Joke Generator is Currently Unavailable try again later</p>
+        <p>currently unavailable try again later.</p>
     <?php endif; ?>
 </div>
 
