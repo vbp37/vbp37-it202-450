@@ -17,6 +17,7 @@ reset_session();
         }
     var emailInput = form.elements.email;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //vbp37 it202-450 July 29 2023
 
     var usernameInput = form.elements.username;
     var passwordInput = form.elements.password;
@@ -26,7 +27,7 @@ reset_session();
 
     // Validate email
     if (emailInput.value.trim() === "") {
-        alert("Email must not be empty");
+        alert("Email should not be left empty");
         return false;
     }
 
@@ -101,6 +102,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
     //sanitize
     $email = sanitize_email($email);
     //validate
+    //vbp37 it202-450 7/29/23
     if (!is_valid_email($email)) {
         flash("Invalid email address", "danger");
         $hasError = true;
