@@ -1,46 +1,71 @@
-<?php
 
+<?php
 require(__DIR__ . "/../../../partials/nav.php");
-
-//VBP37 IT202-450 m23  July 24 2023
-
-if (!has_role("Admin")) {
-    flash("You don't have permission to view this page", "warning");
-    redirect("home.php");
+require_once(__DIR__ . "/../../../lib/render_functions.php");
+$isAdmin = true; 
+if (!$isAdmin) {
+   
+    header("Location: home.php");
+    exit; 
 }
 
-$action = se($_POST, "action", "", false);
-if ($action) {
-    switch ($action) {
-        case "jokes":
-            $jokeData = get("https://dad-jokes.p.rapidapi.com/random/joke", "DADJOKE_API_KEY", [], true, "dad-jokes.p.rapidapi.com");
-            process_jokes($jokeData);
-            break;
+
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+   
+    if (isset($_POST["remove_joke"]) && is_numeric($_POST["remove_joke"])) {
+        $jokeId = (int) $_POST["remove_joke"];
+
+        
+        $db = getDB();
+        $stmt = $db->prepare("DELETE FROM DadJokes WHERE id = :jokeId");
+        try {
+            $stmt->execute([":jokeId" => $jokeId]);
+            $success_message = "Joke removed successfully!";
+        } catch (PDOException $e) {
+            $error_message = "An error occurred while removing the joke: " . $e->getMessage();
+        }
     }
 }
 
-// Display the jokes fetched from the Dad Jokes API
-if (isset($jokesFromDB) && is_array($jokesFromDB) && count($jokesFromDB) > 0) {
-    foreach ($jokesFromDB as $joke) {
-        echo '<div class="joke">';
-        echo '<h3>' . $joke["setup"] . '</h3>';
-        echo '<p>' . $joke["punchline"] . '</p>';
-        echo '</div>';
-    }
-} else {
-    echo '<p>No Jokes yet</p>';
-}
+
+$db = getDB();
+$stmt = $db->prepare("SELECT id, setup, punchline FROM DadJokes");
+$stmt->execute();
+$jokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="container">
-    <h2>Dad Jokes from API/h2>
-    <form method="POST">
-        <button type="submit" name="action" value="jokes">Give me a joke</button>
-    </form>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Mode Edit Joke Database</title>
+</head>
+<body>
+     <?php if ($isAdmin): ?>
+        <h1>Admin Mode Edit Joke Database</h1>
 
-
-<?php
-
-?>
+        <?php if (count($jokes) > 0): ?>
+            <ul>
+            <?php foreach ($jokes as $joke): ?>
+                 <li>
+                        <form method="POST">
+                          <input type="hidden" name="remove_joke" value="<?php echo $joke['id']; ?>">
+                        <?php echo "Setup: " . $joke['setup'] . "<br>"; ?>
+                         <?php echo "Punchline: " . $joke['punchline'] . "<br>"; ?>
+                          <button type="submit">Remove Joke From Database </button> 
+                        </form>
+                </li>
+                <?php endforeach; ?>
+       </ul>
+     <?php else: ?>
+            <p>No jokes found.</p>
+      <?php endif; ?>
+    <?php else: ?>
+        <h1>Error</h1>
+        <p>You don't have permission to view this page.</p>
+      
+        <a href="https://vbp37-prod.herokuapp.com/Project/home.php">Go to Home Page</a>
+    <?php endif; ?>
+</body>
+</html>
