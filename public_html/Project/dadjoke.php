@@ -28,6 +28,13 @@ if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData[
     <?php else : ?>
         <p>Joke Generator is Currently Unavailable, try again later.</p>
     <?php endif; ?>
+     <img src= "https://media.tenor.com/TZVxEIGQ0KYAAAAM/parenting-humor.gif" width="200" height="200">
+     <img src= "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/MSNBC/Components/Video/150908/tdy_tren_jokes_150908.jpg" width="200"  height="200">
+     <img src= "https://www.digitalmomblog.com/wp-content/uploads/2019/06/funny-dad-photos-horse-mask.jpg" width="200"  height="200">
+     <img src= "https://histage.com/images/thumbs/0007154_dad-joke-intervention_550.jpeg" width="200"  height="200">
+     <img src= "https://www.csectioncomics.com/wp-content/uploads/2018/12/dad-jokes-THUMBNAIL-1200x-60p.jpg" width="200"  height="200">
+
+     
 </div>
 
 
