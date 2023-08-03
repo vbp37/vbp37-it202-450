@@ -38,13 +38,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Create Jokes</h1>
     <form method="POST">
       <label for="setup">Setup:</label>
-     <input type="text" name="setup" required><br>
+     <input type="text" name="setup"style="width: 1000px; height: 30px;" required><br>
     <label for="punchline">Punchline:</label>
-    <input type="text" name="punchline" required> <br>
+    <input type="text" name="punchline"style="width: 1000px; height: 30px;" required> <br>
      <label for="username">Your Username:</label>
-     <input type="text" name="username" required> <br>
-     <button type="submit">Submit Your Joke</button>
+     <input type="text" name="username" style="width: 250px; height: 30px;"required> <br>
+     <button type="submit">Submit Your Joke</button> <br>
+     <img src= "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3NqdzA1N3MxMjJ2YXg3MW5weGttdzk2aXF1ZWQ5aTQ2ZTkzdnNzdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/MI0SYPSpobA8Rk6WFQ/giphy.gif" width="500" height="300">
+
     </form>
-/*</body>
-</html> */
+</body>
+</html> 
 </div>
