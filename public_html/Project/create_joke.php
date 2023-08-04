@@ -35,7 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body> -->
    
 <div>
-    <h1>Create Jokes</h1>
+<h1 style="background-color: #f2f2f2; padding: 10px; border-radius: 4px;">Create Your Own Joke</h1>
+
+     <p> <strong>Create your own joke with a setup and punchline.</strong> <p>
     <form method="POST">
       <label for="setup">Setup:</label>
      <input type="text" name="setup"style="width: 1000px; height: 30px;" required><br>
