@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
 
-    // Insert the joke into the database
+    //vbp37 IT202-450 M23  8/3/23
     $db = getDB();
     $stmt = $db->prepare("INSERT INTO DadJokes (setup, punchline, username) VALUES (:setup, :punchline, :username)");
     $stmt->execute([
