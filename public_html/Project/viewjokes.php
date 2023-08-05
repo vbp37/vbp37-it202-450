@@ -5,7 +5,7 @@ require_once(__DIR__ . "/../../lib/api_helper.php"); */
 require(__DIR__ . "/../../partials/nav.php");
 
 
-
+//vbp37 IT202-450 M-23 8/4/23
 $db = getDB();
 
 $stmt = $db->prepare("SELECT setup, punchline, username FROM DadJokes");
