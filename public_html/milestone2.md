@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> IT202 Milestone 2 API Project</td></tr>
 <tr><td> <em>Student: </em> Vivek Patel (vbp37)</td></tr>
-<tr><td> <em>Generated: </em> 8/4/2023 8:20:53 PM</td></tr>
+<tr><td> <em>Generated: </em> 8/4/2023 8:36:52 PM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT202-450-M23/it202-milestone-2-api-project/grade/vbp37" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <ol><li>Checkout Milestone2 branch</li><li>Create a new markdown file called milestone2.md</li><li>git add/commit/push immediate</li><li>Fill in the below deliverables</li><li>At the end copy the markdown and paste it into milestone2.md</li><li>Add/commit/push the changes to Milestone2</li><li>PR Milestone2 to dev and verify</li><li>PR dev to prod and verify</li><li>Checkout dev locally and pull changes to get ready for Milestone 3</li><li>Submit the direct link to this new milestone2.md file from your GitHub prod branch to Canvas</li></ol><p>Note: Ensure all images appear properly on github and everywhere else. Images are only accepted from dev or prod, not local host. All website links must be from prod (you can assume/infer this by getting your dev URL and changing dev to prod).</p></td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Define the appropriate table or tables for your API </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
@@ -151,17 +151,17 @@
 </table></td></tr>
 <table><tr><td> <em>Deliverable 7: </em> API Handling </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshots of Code</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-07-25T03.32.52image.png.webp?alt=media&token=9e1ae99f-c004-4461-945e-3c5227f393e4"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Only showing localhost because the code seems to work on localhost but not<br>on dev. I will show dev as well so issues can be seen.<br>However you can see that the API response is occuring in localhost atleast.<br></p>
-</td></tr>
-<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-07-25T03.34.10image.png.webp?alt=media&token=42ec02f2-8d1b-46cc-a57f-c5e4c7a65a32"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Here in dev you can see that the api key seems to not<br>be accepted at all. It possible that when I rolled back my github<br>to get back previous changed it somehow effected my dadjoke.php page which caused<br> it to be rolled back to a point when my api_key was<br> not given properly.<br></p>
+<tr><td><table><tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-08-05T00.28.33image.png.webp?alt=media&token=6a25dcec-87ea-4464-ac07-e8c64095dcf0"/></td></tr>
+<tr><td> <em>Caption:</em> <p>In the heruko dev screenshot above you can see my dadjoke.php page which<br>shows the data from the api being displayed with setup being the first<br>part of the joke retreived from the API. Punchline is also retrieved by<br>the APi and that is the seocnd part of the joke. The images<br>are not a part of the API they were just added to make<br>thr site look better.<br></p>
 </td></tr>
 <tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-07-25T03.36.01image.png.webp?alt=media&token=ccfad88e-dd03-45fa-96c5-f16c6208f489"/></td></tr>
 <tr><td> <em>Caption:</em> <p>VSCODE to show how I am planning to handle api data very similar<br>to professors code<br></p>
 </td></tr>
 <tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-07-25T03.36.57image.png.webp?alt=media&token=9de047db-fc85-49f3-a3a2-fd4bf2b765ea"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Second part of manage_joke_data.php which shows how api data is decoded and is<br>taken from the array provided by api and then using stmt-&gt;bindvalue thedata is<br>binded to variables in the sql table.<br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://firebasestorage.googleapis.com/v0/b/learn-e1de9.appspot.com/o/assignments%2Fvbp37%2F2023-08-05T00.32.25image.png.webp?alt=media&token=3791ec64-feef-4a15-b80a-0064041a2559"/></td></tr>
+<tr><td> <em>Caption:</em> <p>my dadjoke.php which was made by using the professor cat.php template.  It<br>calls the API on line 8 and sets it the a variable called<br>jokeData. the setup and punchline of the joke is within the body key<br>which is within the body key, and 13-16 you can see the joke<br>being retrieved from within the biody key which is within the response key,<br>the response is set to a variable called response.<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Explanation</td></tr>
