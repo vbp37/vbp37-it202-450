@@ -17,7 +17,19 @@ if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData[
     $response = json_decode($jokeData["response"], true);
     if (isset($response["body"][0]["setup"]) && isset($response["body"][0]["punchline"])) {
         $joke = $response["body"][0];
+        $setup = $response["body"][0]["setup"];
+        $punchline = $response["body"][0]["punchline"];
+        // instead of taking entire epi data and putting in table I'm just trying to put in the setup and punchline.
     }
+}
+
+if ($setup && $punchline) {
+   $db = getDB();
+     $stmt = $db->prepare("INSERT INTO DadJokes (setup, punchline) VALUES (:setup, :punchline)");
+    $stmt->execute([
+        ":setup" => $setup,
+        ":punchline" => $punchline,
+    ]);
 }
 ?>
 
