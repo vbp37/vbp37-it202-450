@@ -11,7 +11,9 @@ require_once(__DIR__ . "/../../partials/nav.php");  // you can do require or req
         <input type="password" id="pw" name="password" required minlength="8" />
     </div>
    
-    <input type="submit" value="Login" />
+    <input type="submit" value="Login" /> <br><br><br>
+    <img src= "https://i.imgflip.com/7uvnyc.jpg" width="1500" height="200">
+
 </form>
 <script>
     function validate(form) {

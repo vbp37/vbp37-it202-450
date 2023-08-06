@@ -4,6 +4,9 @@ require_once(__DIR__ . "/../../lib/load_api_keys.php");
 require(__DIR__ . "/../../partials/nav.php");
 
 //vbp37 IT202-450 M23 8/4/23
+if (!is_logged_in()) {
+    die(header("Location: login.php"));
+}
 
 $jokeData = get("https://dad-jokes.p.rapidapi.com/random/joke", "DADJOKE_API_KEY", [], true, "dad-jokes.p.rapidapi.com");
 
