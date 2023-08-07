@@ -38,7 +38,9 @@ session_start();
             <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
             <li><a href="<?php echo get_url('dadjoke.php'); ?>">Joke Generator</a></li> 
             <li><a href="<?php echo get_url('create_joke.php'); ?>">Create A Joke</a></li> 
-            <li><a href="<?php echo get_url('viewjokes.php'); ?>">View user Jokes</a></li> 
+            <li><a href="<?php echo get_url('viewjokes.php'); ?>">View User Jokes</a></li> 
+            <li><a href="<?php echo get_url('viewAPIjokes.php'); ?>">View API Jokes</a></li> 
+
 
 
 
