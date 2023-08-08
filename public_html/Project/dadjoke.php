@@ -19,7 +19,7 @@ if (isset($jokeData["status"]) && $jokeData["status"] == 200 && isset($jokeData[
         $joke = $response["body"][0];
         $setup = $response["body"][0]["setup"];
         $punchline = $response["body"][0]["punchline"];
-        // instead of taking entire epi data and putting in table I'm just trying to put in the setup and punchline.
+        // instead of taking entire epi data and putting in table I'm just trying to put in the setup and punchline. 22-23
     }
 }
 
@@ -35,10 +35,10 @@ if ($setup && $punchline) {
 
 <div class="container">
 <h1 style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">Dad Joke Generator</h1>
-    <?php if ($joke) : ?>
+     <?php if ($joke) : ?>
         <div class="joke">
           <h2> Setup: <?php echo $joke["setup"]; ?></h2>
-            <p> <strong>Punchline: </strong> <?php echo $joke["punchline"]; ?></p>
+        <p> <strong>Punchline: </strong> <?php echo $joke["punchline"]; ?></p>
         </div>
     <?php else : ?>
         <p>Joke Generator is Currently Unavailable, try again later.</p>
