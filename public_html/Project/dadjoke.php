@@ -37,7 +37,7 @@ if ($setup && $punchline) {
 <h1 style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">Dad Joke Generator</h1>
     <?php if ($joke) : ?>
         <div class="joke">
-            <h2> Setup: <?php echo $joke["setup"]; ?></h2>
+          <h2> Setup: <?php echo $joke["setup"]; ?></h2>
             <p> <strong>Punchline: </strong> <?php echo $joke["punchline"]; ?></p>
         </div>
     <?php else : ?>

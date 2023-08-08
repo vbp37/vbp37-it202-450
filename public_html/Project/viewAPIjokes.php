@@ -22,12 +22,12 @@ $jokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="jokeContainer">
 <h1 style="background-color: #f2f2f2; padding: 10px; border-radius: 5px;">Jokes Made By You Guys</h1>
 
-    <?php if (count($jokes) > 0) : ?>
+  <?php if (count($jokes) > 0) : ?>
     <ul>
       
-        <?php foreach ($jokes as $joke) : ?>
-        <li>
-             <strong>Setup:  </strong> <?php  echo   $joke["setup"]; ?>
+      <?php foreach ($jokes as $joke) : ?>
+       <li>
+         <strong>Setup:  </strong> <?php  echo   $joke["setup"]; ?>
          <strong>Punchline:  </strong><?php  echo $joke["punchline"]; ?> <br><br>
                
         </li>
