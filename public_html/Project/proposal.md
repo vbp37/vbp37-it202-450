@@ -1,8 +1,7 @@
-git ad## Project Name: (API Project: DadJokes)
-### Project Summary: (Copy from proposal)
-### Github Link: (Prod Branch of Project Folder)
-### Project Board Link: 
-### Website Link: (Heroku Prod of Project folder)
+### Project Name: (API Project: DadJokes)
+### Github Link: https://github.com/vbp37/vbp37-it202-450
+### Project Board Link: https://github.com/users/vbp37/projects/6/views/1
+### Website Link: http://vbp37-prod.herokuapp.com/Project/login.php
 ### API Link: https://rapidapi.com/KegenGuyll/api/dad-jokes/
 ### Vivek B.Patel
 ### UCID - vbp37
