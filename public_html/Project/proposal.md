@@ -1,4 +1,4 @@
-## Project Name: (API Project: DadJokes)
+git ad## Project Name: (API Project: DadJokes)
 ### Project Summary: (Copy from proposal)
 ### Github Link: (Prod Branch of Project Folder)
 ### Project Board Link: 
@@ -83,7 +83,7 @@
 
         Deliverables:
             
-            **Highlight and Bold: Define Appropriate Tables for API Data**
+         ##   **Highlight and Bold: Define Appropriate Tables for API Data**
 
             - Use the following core columns: id, created, modified.
             - Additional columns for incoming API data.
@@ -91,7 +91,7 @@
             - Distinguish manual and API data using a separate column.
             - Consider access roles for data creation (admin or any user).
 
-            **Data Creation Page**
+          ##  **Data Creation Page**
 
             - Form with correct data types and validation.
             - Handle duplicate content gracefully.
@@ -100,7 +100,7 @@
             - Manual and API entities in the same table.
             - Use an indicator column for manual/API distinction.
 
-            **Data List Page (Many Items)**
+          ##  **Data List Page (Many Items)**
 
             - List both API-generated and custom entities.
             - Define access roles and user login requirements.
@@ -111,7 +111,7 @@
             - Include links: single view, delete, edit.
             - Apply chosen design/style.
 
-            **View Data Details Page (Single Item)**
+          ##   **View Data Details Page (Single Item)**
 
             - Fetch entity by ID from URL query parameters.
             - Redirect on invalid ID with appropriate message.
@@ -119,7 +119,7 @@
             - Display detailed data compared to list view.
             - Links: edit, delete.
 
-            **Edit Data Page**
+          ##  **Edit Data Page**
 
             - Fetch entity by ID from URL query parameters.
             - Redirect on invalid ID with message.
@@ -130,7 +130,7 @@
             - Display updated data in form.
             - User-friendly error messages.
 
-            **Delete Handling**
+          ##  **Delete Handling**
 
             - Fetch entity by ID from URL query parameters.
             - Redirect on invalid ID with message.
@@ -140,7 +140,7 @@
             - Redirect to previous page after successful deletion.
             - Preserve filter/sort in redirects.
 
-            **API Handling**
+          ##  **API Handling**
 
             - Fetch API data server-side.
             - Transform API data to match table structure.
@@ -217,8 +217,96 @@
 
 
 - Milestone 3
-  - (add link to milestone3.md from milestone3 branch)
-- Milestone 4
-  - (add link to milestone4.md from milestone4 branch)
-- Demo Link
+  https://github.com/vbp37/vbp37-it202-450/blob/Milestone3/public_html/Project/milestone3.md
+
+    ## **API Data Association**
+
+    ## **Consider User Association with API Data**
+
+        Examples:
+        - List of favorites
+        - Recipe Builder
+        - WatchList
+        - Purchases
+        - Assignment
+        - Etc
+
+     ## **Handling Data Changes**
+
+        How is the association affected when the entity is updated manually or via the API?
+
+        Examples:
+        - User sees the old version of the data
+        - User sees the new version of the data
+        - User needs to re-associate the data
+        - Etc
+
+     ## **Handle Data Association with Users**
+
+        **Option 1: Update Pages for User Association**
+
+        Update necessary pages to allow data association with a user.
+        This includes favorites, shopping cart, wishlist, etc.
+
+        **Option 2: Create Page for External Association**
+
+        Create a page where users have data associated with them by others (e.g., higher roles assigning associations).
+        This is used when users can't control their own data, like the Roles system.
+
+     ## **Logged-in User's Associated Entities Page**
+
+        - Each line item summarizes relevant information.
+        - Include links: single view (details page), delete (relationship, not entity/user).
+        - Provide link/button to remove all associations from the user (possibly admin only).
+        - Page heading displays total count of items associated with the user.
+        - Heading includes the total number of items shown on the page.
+        - Value adjusts based on applied filters.
+        - Logical filtering/sorting options.
+        - Filter/sort includes field for specifying record limit (1 to 100).
+        - Server-side ensures chosen value is within range or defaults to 10.
+        - Clear message for no matching records.
+
+    ## **All Users Association Page**
+
+        - Note: Likely admin page, different from previous item.
+        - Show multiple associations between entities and users.
+        - Each line item summarizes relevant information.
+        - Includes associated username and total number of users.
+        - Include links: single view of entity (details page), delete (relationship, not entity/user).
+        - Clicking username redirects to respective user's profile.
+        - Page heading displays total count of items associated with users.
+        - Heading includes total number of items shown on the page.
+        - Value adjusts based on applied filters.
+        - Filter to show items associated with matching usernames.
+        - Remove all associations link/button after applying filter.
+        - Additional logical filtering/sorting options.
+
+    ## **Data Not Associated with Any User**
+
+        - Note: Likely admin page, different from previous items.
+        - Each line item summarizes relevant information.
+        - Include link to single view of the entity (details page).
+        - Page heading shows total count of items not associated with anyone.
+        - Heading includes total number of items shown on the page.
+        - Value adjusts based on applied filters.
+        - Logical filtering/sorting options.
+        - Filter/sort includes field for specifying record limit (1 to 100).
+        - Server-side ensures chosen value is within range or defaults to 10.
+        - Clear message for no matching records.
+
+    ##  **Admin Association of Entities with Users**
+
+        - Note: May be a form on existing association page.
+        - Form with two fields:
+        - Entity identifier field (name or user-friendly property), partial match.
+        - Username field, partial match.
+        - Submission results in a list:
+        - All partially matched entities (max 25 results).
+        - All partially matched users (max 25 results).
+        - Each entity and user has a checkbox.
+        - Button to apply checked associations at top/bottom.
+        - Clicking association button applies or removes the association.
+
+
+ ## **Final Demo Link**
   - https://www.youtube.com/watch?v=lGGB_InKFmA
