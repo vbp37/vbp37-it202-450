@@ -12,16 +12,17 @@ if (!has_role("Admin")) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
    
-    if (isset($_POST["remove_joke"]) && is_numeric($_POST["remove_joke"])) {
-        $jokeId = (int) $_POST["remove_joke"];
+    if (isset($_POST["remove_joke"]) ) {
+        $jokeId =  $_POST["remove_joke"];
 
         
         $db = getDB();
         $stmt = $db->prepare("DELETE FROM DadJokes WHERE id = :jokeId");
         try {
-            $stmt->execute([":jokeId" => $jokeId]);
-            $success_message = "Joke removed successfully!";
-        } catch (PDOException $e) {
+             $stmt->execute([":jokeId" => $jokeId]);
+              $success_message = "Joke removed successfully!";
+        } 
+        catch (PDOException $e) {
             $error_message = "An error occurred while removing the joke: " . $e->getMessage();
         }
     }
@@ -46,19 +47,19 @@ $jokes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <?php if (count($jokes) > 0): ?>
             <ul>
-            <?php foreach ($jokes as $joke): ?>
+          <?php foreach ($jokes as $joke): ?>
                  <li>
-                        <form method="POST">
-                          <input type="hidden" name="remove_joke" value="<?php echo $joke['id']; ?>">
+                   <form method="POST">
+                       <input type="hidden" name="remove_joke" value="<?php echo $joke['id']; ?>">
                         <?php echo "Setup: " . $joke['setup'] . "<br>"; ?>
-                         <?php echo "Punchline: " . $joke['punchline'] . "<br>"; ?>
-                          <button type="submit">Remove Joke From Database </button> 
+                      <?php echo "Punchline: " . $joke['punchline'] . "<br>"; ?>
+                         <button type="submit">Remove Joke From Database </button> 
                         </form>
                 </li>
                 <?php endforeach; ?>
        </ul>
      <?php else: ?>
-            <p>No jokes found.</p>
+          <p>No jokes found.</p>
       <?php endif; ?>
     <?php else: ?>
         <h1>Error</h1>

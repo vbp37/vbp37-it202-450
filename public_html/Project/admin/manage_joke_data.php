@@ -10,7 +10,6 @@ if (!has_role("Admin")) {
     die(header("Location: " . get_url("home.php")));
 }
 
-//TODO need to update insert_breeds... to use the $mappings array and not go based on is_int for value
 //vbp37 IT202-450 M23  7/24/23
 function insert_jokes_into_db($db, $jokes)
 {

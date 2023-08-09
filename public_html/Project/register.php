@@ -1,90 +1,26 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
 require_once(__DIR__ . "/../../lib/render_functions.php");
+
 reset_session();
 ?>
-
-
-
+<div class="container-fluid">
+<form onsubmit="return validate(this)" method="POST">
+    <?php render_input(["type"=>"email", "id"=>"email", "name"=>"email", "label"=>"Email", "rules"=>["required"=>true]]);?>
+    <?php render_input(["type"=>"text", "id"=>"username", "name"=>"username", "label"=>"Username", "rules"=>["required"=>true, "maxlength"=>30]]);?>
+    <?php render_input(["type"=>"password", "id"=>"password", "name"=>"password", "label"=>"Password", "rules"=>["required"=>true, "minlength"=>8]]);?>
+    <?php render_input(["type"=>"password", "id"=>"confirm", "name"=>"confirm", "label"=>"Confirm Password", "rules"=>["required"=>true,"minlength"=>8]]);?>
+    <?php render_button(["text"=>"Register", "type"=>"submit"]);?>
+</form>
+</div>
 <script>
-    var isValidationEnabled = true;
     function validate(form) {
         //TODO 1: implement JavaScript validation
         //ensure it returns false for an error and true for success
-         // Get form inputs'
-        if (!isValidationEnabled) {
-            return true;
-        }
-    var emailInput = form.elements.email;
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //vbp37 it202-450 July 29 2023
-
-    var usernameInput = form.elements.username;
-    var passwordInput = form.elements.password;
-    var confirmInput = form.elements.confirm;
-
-    // Perform validation
-
-    // Validate email
-    if (emailInput.value.trim() === "") {
-        alert("Email should not be left empty");
-        return false;
-    }
-
-    if (!emailRegex.test(emailInput.value.trim())) {
-        alert("Invalid email address");
-        return false;
-    }
-
-    // Validate username
-    if (usernameInput.value.trim() === "") {
-        alert("Username must not be empty");
-        return false;
-    }
-
-    // Validate password
-    if (passwordInput.value.trim() === "") {
-        alert("Password must not be empty");
-        return false;
-    }
-
-    // Validate confirm password
-    if (confirmInput.value.trim() === "") {
-        alert("Confirm Password must not be empty");
-        return false;
-    } else if (confirmInput.value !== passwordInput.value) {
-        alert("Passwords do not match");
-        return false;
-    }
 
         return true;
     }
-    function disableValidationAndSubmit(form) {
-           
-            isValidationEnabled = false;
-
-            
-            form.submit();
-        }
 </script>
-</head>
-<body>
-    
-    <div class="container-fluid">
-    <form onsubmit="return validate(this)">
-
-            <?php
-            render_input(["type" => "email", "id" => "email", "name" => "email", "label" => "Email", "rules" => ["required" => true]]);
-            render_input(["type" => "text", "id" => "username", "name" => "username", "label" => "Username", "rules" => ["required" => true, "maxlength" => 30]]);
-            render_input(["type" => "password", "id" => "password", "name" => "password", "label" => "Password", "rules" => ["required" => true, "minlength" => 8]]);
-            render_input(["type" => "password", "id" => "confirm", "name" => "confirm", "label" => "Confirm Password", "rules" => ["required" => true, "minlength" => 8]]);
-            render_button(["text" => "Register", "type" => "submit"]);
-            ?>
-        </form>
-    </div>
-</body>
-
-
 <?php
 //TODO 2: add PHP Code
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm"]) && isset($_POST["username"])) {
@@ -98,17 +34,11 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
         flash("Email must not be empty", "danger");
         $hasError = true;
     }
-       
     //sanitize
     $email = sanitize_email($email);
     //validate
-    //vbp37 it202-450 7/29/23
     if (!is_valid_email($email)) {
         flash("Invalid email address", "danger");
-        $hasError = true;
-    } 
-        else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        flash("Invalid email address");
         $hasError = true;
     }
     if (!is_valid_username($username)) {
@@ -149,7 +79,4 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["confirm
 ?>
 <?php
 require(__DIR__ . "/../../partials/flash.php");
-
-
-
-?> 
+?>
