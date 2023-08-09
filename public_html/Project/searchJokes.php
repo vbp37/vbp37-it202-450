@@ -7,7 +7,7 @@ if (!is_logged_in()) {
     die(header("Location: login.php"));
 }
 
-$username = "";  // this is empty because API jokes are null
+$username = "";  
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
  {
